@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "request_order")
 public class Order extends AuditorBase {
     @Column(unique = true)
     private String trackId;
