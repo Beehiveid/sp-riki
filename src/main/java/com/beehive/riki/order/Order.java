@@ -2,16 +2,16 @@ package com.beehive.riki.order;
 
 import com.beehive.riki.common.AuditorBase;
 import com.beehive.riki.customer.Customer;
+import com.beehive.riki.evidence.Evidence;
 import com.beehive.riki.salesPerson.SalesPerson;
 import com.beehive.riki.services.Services;
 import com.beehive.riki.sto.Sto;
 import com.beehive.riki.technician.Technician;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Order extends AuditorBase {
@@ -52,6 +52,17 @@ public class Order extends AuditorBase {
     @ManyToOne
     @JoinColumn(name = "service_id")
     private Services service;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
+    private List<Evidence> evidences = new ArrayList<>();
+
+    public List<Evidence> getEvidences() {
+        return evidences;
+    }
+
+    public void setEvidences(List<Evidence> evidences) {
+        this.evidences = evidences;
+    }
 
     public String getTrackId() {
         return trackId;
