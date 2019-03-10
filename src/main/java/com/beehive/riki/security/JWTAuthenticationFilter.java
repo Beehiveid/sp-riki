@@ -9,11 +9,6 @@ import com.beehive.riki.users.AppUser;
 import com.beehive.riki.users.LoggedUser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pancabudi.technic.client.Client;
-import com.pancabudi.technic.client.ClientInformation;
-import com.pancabudi.technic.client.ClientService;
-import com.pancabudi.technic.users.AppUser;
-import com.pancabudi.technic.users.LoggedUser;
 import net.sf.uadetector.ReadableUserAgent;
 import net.sf.uadetector.UserAgentStringParser;
 import net.sf.uadetector.service.UADetectorServiceFactory;
@@ -32,8 +27,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
-import static com.pancabudi.technic.security.SecurityConstant.SECRET;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private static UserAgentStringParser parser = UADetectorServiceFactory.getResourceModuleParser();

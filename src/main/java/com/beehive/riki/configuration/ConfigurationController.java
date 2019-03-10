@@ -2,8 +2,6 @@ package com.beehive.riki.configuration;
 
 import com.beehive.riki.system.SystemEnvironment;
 import com.beehive.riki.system.SystemEnvironmentServiceImpl;
-import com.pancabudi.technic.system.SystemEnvironment;
-import com.pancabudi.technic.system.SystemEnvironmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,9 +1,8 @@
 package com.beehive.riki.person;
 
+import com.beehive.riki.location.Location;
+import com.beehive.riki.location.LocationService;
 import com.beehive.riki.users.UserService;
-import com.pancabudi.technic.location.Location;
-import com.pancabudi.technic.location.LocationService;
-import com.pancabudi.technic.users.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

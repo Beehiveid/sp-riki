@@ -1,14 +1,11 @@
 package com.beehive.riki.users;
 
 import com.beehive.riki.email.EmailService;
+import com.beehive.riki.exception.ResourceNotFoundException;
+import com.beehive.riki.person.Person;
+import com.beehive.riki.person.PersonService;
 import com.beehive.riki.role.Role;
 import com.beehive.riki.role.RoleService;
-import com.pancabudi.technic.email.EmailService;
-import com.pancabudi.technic.exception.ResourceNotFoundException;
-import com.pancabudi.technic.person.Person;
-import com.pancabudi.technic.person.PersonService;
-import com.pancabudi.technic.role.Role;
-import com.pancabudi.technic.role.RoleService;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.datatables.mapping.DataTablesInput;

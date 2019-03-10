@@ -1,7 +1,7 @@
 package com.beehive.riki.email;
 
-import com.pancabudi.technic.serviceRequestOrder.ServiceRequestOrder;
-import com.pancabudi.technic.users.AppUser;
+import com.beehive.riki.serviceRequestOrder.ServiceRequestOrder;
+import com.beehive.riki.users.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

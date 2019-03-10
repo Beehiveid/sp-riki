@@ -1,8 +1,7 @@
 package com.beehive.riki.users;
 
+import com.beehive.riki.person.Person;
 import com.beehive.riki.role.Role;
-import com.pancabudi.technic.person.Person;
-import com.pancabudi.technic.role.Role;
 
 import javax.persistence.*;
 

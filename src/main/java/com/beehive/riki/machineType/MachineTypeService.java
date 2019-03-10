@@ -1,11 +1,9 @@
 package com.beehive.riki.machineType;
 
 import com.beehive.riki.common.SystemConstant;
+import com.beehive.riki.complaintType.ComplaintType;
+import com.beehive.riki.complaintType.ComplaintTypeService;
 import com.beehive.riki.exception.ResourceNotFoundException;
-import com.pancabudi.technic.common.SystemConstant;
-import com.pancabudi.technic.complaintType.ComplaintType;
-import com.pancabudi.technic.complaintType.ComplaintTypeService;
-import com.pancabudi.technic.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
 import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;

@@ -1,7 +1,6 @@
 package com.beehive.riki.system;
 
 import com.beehive.riki.common.ServiceFactory;
-import com.pancabudi.technic.common.ServiceFactory;
 
 public interface SystemEnvironmentService extends ServiceFactory<SystemEnvironment, Long> {
     SystemEnvironment loadSROConfig();

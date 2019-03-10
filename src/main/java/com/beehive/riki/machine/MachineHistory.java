@@ -1,9 +1,8 @@
 package com.beehive.riki.machine;
 
 import com.beehive.riki.person.Person;
+import com.beehive.riki.serviceRequestOrder.ServiceRequestOrderHandling;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.pancabudi.technic.person.Person;
-import com.pancabudi.technic.serviceRequestOrder.ServiceRequestOrderHandling;
 
 public class MachineHistory extends ServiceRequestOrderHandling {
     private String technician;

@@ -1,6 +1,6 @@
 package com.beehive.riki.serviceRequestOrder;
 
-import com.pancabudi.technic.machine.Machine;
+import com.beehive.riki.machine.Machine;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.util.Arrays;

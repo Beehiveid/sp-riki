@@ -1,6 +1,6 @@
 package com.beehive.riki.serviceRequestOrder;
 
-import com.pancabudi.technic.common.ServiceFactory;
+import com.beehive.riki.common.ServiceFactory;
 
 import java.util.List;
 

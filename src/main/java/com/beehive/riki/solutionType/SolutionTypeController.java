@@ -1,7 +1,6 @@
 package com.beehive.riki.solutionType;
 
 import com.beehive.riki.common.ControllerFactory;
-import com.pancabudi.technic.common.ControllerFactory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

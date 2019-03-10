@@ -3,9 +3,6 @@ package com.beehive.riki.serviceRequestOrder;
 import com.beehive.riki.complaintType.ComplaintType;
 import com.beehive.riki.machine.Machine;
 import com.beehive.riki.person.Person;
-import com.pancabudi.technic.complaintType.ComplaintType;
-import com.pancabudi.technic.machine.Machine;
-import com.pancabudi.technic.person.Person;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;

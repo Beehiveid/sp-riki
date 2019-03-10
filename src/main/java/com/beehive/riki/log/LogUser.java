@@ -1,6 +1,6 @@
 package com.beehive.riki.log;
 
-import com.pancabudi.technic.users.AppUser;
+import com.beehive.riki.users.AppUser;
 
 import javax.persistence.*;
 import java.util.Date;

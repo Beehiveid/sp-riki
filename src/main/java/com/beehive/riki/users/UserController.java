@@ -1,9 +1,9 @@
 package com.beehive.riki.users;
 
 import com.auth0.jwt.JWT;
-import com.pancabudi.technic.client.ClientService;
-import com.pancabudi.technic.client.SessionInformation;
-import com.pancabudi.technic.person.Person;
+import com.beehive.riki.client.ClientService;
+import com.beehive.riki.client.SessionInformation;
+import com.beehive.riki.person.Person;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
-import static com.pancabudi.technic.security.SecurityConstant.HEADER_STRING;
-import static com.pancabudi.technic.security.SecurityConstant.TOKEN_PREFIX;
+import static com.beehive.riki.security.SecurityConstant.HEADER_STRING;
+import static com.beehive.riki.security.SecurityConstant.TOKEN_PREFIX;
 
 @RestController
 @RequestMapping("/user")

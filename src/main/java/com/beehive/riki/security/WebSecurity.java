@@ -1,7 +1,6 @@
 package com.beehive.riki.security;
 
 import com.beehive.riki.client.ClientService;
-import com.pancabudi.technic.client.ClientService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -18,8 +17,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 import java.util.Collections;
-
-import static com.pancabudi.technic.security.SecurityConstant.*;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)

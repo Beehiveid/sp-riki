@@ -1,7 +1,7 @@
 package com.beehive.riki.machine;
 
-import com.pancabudi.technic.location.Location;
-import com.pancabudi.technic.machineType.MachineType;
+import com.beehive.riki.location.Location;
+import com.beehive.riki.machineType.MachineType;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

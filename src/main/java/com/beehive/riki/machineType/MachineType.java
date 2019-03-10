@@ -1,7 +1,7 @@
 package com.beehive.riki.machineType;
 
-import com.pancabudi.technic.complaintType.ComplaintType;
-import com.pancabudi.technic.solutionType.SolutionType;
+import com.beehive.riki.complaintType.ComplaintType;
+import com.beehive.riki.solutionType.SolutionType;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;

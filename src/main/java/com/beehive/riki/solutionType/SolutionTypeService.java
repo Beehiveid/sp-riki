@@ -1,7 +1,6 @@
 package com.beehive.riki.solutionType;
 
 import com.beehive.riki.common.ServiceFactory;
-import com.pancabudi.technic.common.ServiceFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
 import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;

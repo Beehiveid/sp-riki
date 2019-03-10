@@ -1,6 +1,6 @@
 package com.beehive.riki.role;
 
-import com.pancabudi.technic.exception.ResourceNotFoundException;
+import com.beehive.riki.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

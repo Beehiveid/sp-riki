@@ -1,7 +1,6 @@
 package com.beehive.riki.serviceRequestOrder;
 
 import com.beehive.riki.person.Person;
-import com.pancabudi.technic.person.Person;
 
 import javax.persistence.*;
 import java.util.Date;

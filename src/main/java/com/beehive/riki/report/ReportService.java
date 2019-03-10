@@ -1,6 +1,7 @@
 package com.beehive.riki.report;
 
-import com.pancabudi.technic.serviceRequestOrder.SROReportData;
+
+import com.beehive.riki.serviceRequestOrder.SROReportData;
 
 import java.io.File;
 import java.util.HashMap;

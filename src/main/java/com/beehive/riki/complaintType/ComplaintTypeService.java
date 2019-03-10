@@ -1,7 +1,6 @@
 package com.beehive.riki.complaintType;
 
 import com.beehive.riki.exception.ResourceNotFoundException;
-import com.pancabudi.technic.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
 import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;

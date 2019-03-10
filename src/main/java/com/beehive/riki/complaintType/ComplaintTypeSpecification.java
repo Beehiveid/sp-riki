@@ -1,7 +1,6 @@
 package com.beehive.riki.complaintType;
 
 import com.beehive.riki.common.SystemConstant;
-import com.pancabudi.technic.common.SystemConstant;
 import org.springframework.data.jpa.domain.Specification;
 
 class ComplaintTypeSpecification {

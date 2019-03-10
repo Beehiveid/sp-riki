@@ -1,14 +1,11 @@
 package com.beehive.riki.person;
 
+import com.beehive.riki.exception.ResourceNotFoundException;
+import com.beehive.riki.location.Location;
+import com.beehive.riki.location.LocationService;
 import com.beehive.riki.role.RoleService;
 import com.beehive.riki.users.AppUser;
 import com.beehive.riki.users.UserService;
-import com.pancabudi.technic.exception.ResourceNotFoundException;
-import com.pancabudi.technic.location.Location;
-import com.pancabudi.technic.location.LocationService;
-import com.pancabudi.technic.role.RoleService;
-import com.pancabudi.technic.users.AppUser;
-import com.pancabudi.technic.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

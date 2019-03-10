@@ -1,6 +1,6 @@
 package com.beehive.riki.machine;
 
-import com.pancabudi.technic.location.Location;
+import com.beehive.riki.location.Location;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.util.List;
