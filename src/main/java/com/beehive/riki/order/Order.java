@@ -54,7 +54,8 @@ public class Order extends AuditorBase {
     @JoinColumn(name = "service_id")
     private Services service;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "request_order_id")
     private List<Evidence> evidences = new ArrayList<>();
 
     public List<Evidence> getEvidences() {
