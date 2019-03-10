@@ -16,8 +16,8 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
 
-group = 'com.pancabudi'
-version = 'deployed'
+group = 'com.beehive'
+version = 'dev'
 sourceCompatibility = 1.8
 
 repositories {
