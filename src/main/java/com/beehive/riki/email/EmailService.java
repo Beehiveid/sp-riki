@@ -1,7 +1,5 @@
 package com.beehive.riki.email;
 
-import com.beehive.riki.serviceRequestOrder.ServiceRequestOrder;
-import com.beehive.riki.users.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -18,26 +16,6 @@ public class EmailService {
         mailObject.setTo(context.getVariable("email").toString());
         mailObject.setTemplate("mail-reset-password");
         mailObject.setSubject("Reset Password");
-
-        mailClient.send(mailObject, context);
-    }
-
-    @Async
-    public void creatingSRO(Context context) {
-        MailObject mailObject = new MailObject();
-        mailObject.setTo(((AppUser) context.getVariable("technician")).getPerson().getEmail());
-        mailObject.setTemplate("mail-creating-sro");
-        mailObject.setSubject("New SRO:"+((ServiceRequestOrder) context.getVariable("sro")).getId());
-
-        mailClient.send(mailObject, context);
-    }
-
-    @Async
-    public void handlingSRO(Context context) {
-        MailObject mailObject = new MailObject();
-        mailObject.setTo(((ServiceRequestOrder) context.getVariable("sro")).getRequester().getEmail());
-        mailObject.setTemplate("mail-handling-sro");
-        mailObject.setSubject("Handling SRO:"+((ServiceRequestOrder) context.getVariable("sro")).getId());
 
         mailClient.send(mailObject, context);
     }

@@ -1,7 +1,5 @@
 package com.beehive.riki.person;
 
-import com.beehive.riki.location.Location;
-import com.beehive.riki.location.LocationService;
 import com.beehive.riki.users.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -22,9 +20,6 @@ public class PersonController {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private LocationService locationService;
 
     @GetMapping
     @ApiOperation(
@@ -64,22 +59,4 @@ public class PersonController {
         personService.update(id,person);
     }
 
-    @GetMapping("/{id}/location")
-    public List<Location> getLocation(@PathVariable long id){
-        return personService.getLocation(id);
-    }
-
-    @GetMapping("/leader")
-    public Set<Person> getTeamLeaderFilter(@RequestParam Long location, @RequestParam(name = "filter", required = false) boolean filter){
-        return personService.getTeamLeader(location, filter);
-    }
-
-    @GetMapping("/technician")
-    public Set<Person> getTechnician(@RequestParam(name = "location", required = false) Long location, @RequestParam(name = "filter", required = false) boolean filter){
-        if(location != null){
-            return personService.getTechnician(location, filter);
-        }else{
-            return personService.getTechnician();
-        }
-    }
 }

@@ -5,7 +5,6 @@ import com.beehive.riki.log.LogUser;
 import com.beehive.riki.log.LogUserService;
 import com.beehive.riki.role.Role;
 import com.beehive.riki.role.RoleService;
-import com.beehive.riki.serviceRequestOrder.SROConsentFlow;
 import com.beehive.riki.system.SystemEnvironment;
 import com.beehive.riki.system.SystemEnvironmentServiceImpl;
 import com.beehive.riki.users.AppUser;
@@ -112,26 +111,6 @@ public class ClientService {
         logUser.setMethod(req.getMethod());
         logUser.setSystemDate(new Date());
         logUserService.submit(logUser);
-    }
-
-    public List<String> defineSROScopes(AppUser a) {
-        Role administrator = roleService.findByName("Administrator");
-        SystemEnvironment sc = systemEnvironmentService.loadSROConfig();
-        List<String> scopes = new ArrayList<>();
-
-        try {
-            SROConsentFlow[] sroConsentFlows = new ObjectMapper().readValue(sc.getValue(), SROConsentFlow[].class);
-
-            for (SROConsentFlow flow : sroConsentFlows) {
-                if(flow.getRoles().contains(a.getRole().getId()) || a.getRole().getId() == administrator.getId()){
-                    scopes.add(flow.getFlow());
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return scopes;
     }
 
     public String defineUIConfig() {

@@ -27,11 +27,11 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo(){
         return new ApiInfo(
-                "Pancabudi Technic API",
-                "Endpoint API for Pancabudi Technic development",
+                "Riki API",
+                "Endpoint API for Riki development",
                 "0.0.1",
                 null,
-                new Contact("IT Pancabudi", "www.pancabudi.com","teknik@polytechindohausen.com"),
+                new Contact("Beehive Dev", null,null),
                 "Apache 2.0",
                 "https://www.apache.org/licenses/LICENSE-2.0.html",
                 Collections.emptyList()

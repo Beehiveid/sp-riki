@@ -25,7 +25,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
@@ -82,10 +81,8 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             ciString = new ObjectMapper().writeValueAsString(clientInformation);
         }
 
-        List<String> sroScopes = clientService.defineSROScopes(appUser);
         String uiConfig = clientService.defineUIConfig();
         String spt = clientService.defineSROPriorityType();
-        String sroScopesStr = String.join(",", sroScopes);
 
         String token = JWT.create()
                 .withSubject(((User)auth.getPrincipal()).getUsername())
@@ -95,7 +92,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .withClaim("cid", clientId.toString())
                 .withClaim("sky", secretKey.toString())
                 .withClaim("scope", appUser.getRole().getName().toUpperCase().replace(" ","_"))
-                .withClaim("sro", sroScopesStr)
                 .withClaim("uic", uiConfig)
                 .withClaim("spt", spt)
                 .sign(Algorithm.HMAC512(SecurityConstant.SECRET.getBytes()));

@@ -1,13 +1,9 @@
 package com.beehive.riki.common;
 
-import com.beehive.riki.complaintType.ComplaintType;
-import com.beehive.riki.complaintType.ComplaintTypeService;
 import com.beehive.riki.person.Person;
 import com.beehive.riki.person.PersonService;
 import com.beehive.riki.role.Role;
 import com.beehive.riki.role.RoleService;
-import com.beehive.riki.serviceRequestOrder.ServiceRequestOrderService;
-import com.beehive.riki.system.SystemEnvironment;
 import com.beehive.riki.system.SystemEnvironmentServiceImpl;
 import com.beehive.riki.users.AppUser;
 import com.beehive.riki.users.UserService;
@@ -20,13 +16,9 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import static com.beehive.riki.common.SystemConstant.ADMINISTRATOR_ROLE;
-import static com.beehive.riki.common.SystemConstant.REPORTING_TOKEN;
-import static com.beehive.riki.common.SystemConstant.SRO_PRIORITY_TOKEN;
 
 @Component
 public class Initiator {
@@ -35,9 +27,6 @@ public class Initiator {
 
     @Autowired
     private RoleService roleService;
-
-    @Autowired
-    private ComplaintTypeService complaintTypeService;
 
     @Autowired
     private PersonService personService;
@@ -50,9 +39,6 @@ public class Initiator {
 
     @Autowired
     private SystemEnvironmentServiceImpl systemEnvironmentService;
-
-    @Autowired
-    private ServiceRequestOrderService serviceRequestOrderService;
 
     @Value("${super.username}")
     private String username;
@@ -138,56 +124,5 @@ public class Initiator {
 
         AppUser user = userService.findByPerson(person);
         return user != null;
-    }
-
-    @PostConstruct
-    public void complaintTypeInit(){
-        String name = "Complaint Type Initiation";
-        log.info("[{}] executed at {}",name , formatter.format(new Date()));
-
-        List<String> types = new ArrayList<>();
-        types.add(SystemConstant.AUTO_ROUTING_MAINTENANCE);
-
-        for(String type : types){
-            boolean exist = complaintTypeService.isExist(type);
-
-            if(!exist){
-                complaintTypeService.create(new ComplaintType(type));
-                log.info(type+" complaint type was created");
-            }
-        }
-    }
-
-    @PostConstruct
-    public void sroConfigInit(){
-        String name = "SRO Configuration Initiation";
-        log.info("[{}] executed at {}",name , formatter.format(new Date()));
-
-        SystemEnvironment UIConfig = systemEnvironmentService.loadUIConfig();
-
-        if(UIConfig == null)
-            serviceRequestOrderService.postConsent(sroFlow);
-
-        SystemEnvironment reportingConfig = systemEnvironmentService.loadReportingConfig();
-
-        if(reportingConfig == null){
-            reportingConfig = new SystemEnvironment();
-            reportingConfig.setValue(sroReports);
-            reportingConfig.setSystemDate(new Date());
-            reportingConfig.setToken(REPORTING_TOKEN);
-
-            systemEnvironmentService.save(reportingConfig);
-        }
-
-        SystemEnvironment sroPriorityConfig = systemEnvironmentService.loadSROPriorityConfig();
-
-        if(sroPriorityConfig == null){
-            sroPriorityConfig = new SystemEnvironment();
-            sroPriorityConfig.setValue(sroPriority);
-            sroPriorityConfig.setSystemDate(new Date());
-            sroPriorityConfig.setToken(SRO_PRIORITY_TOKEN);
-
-            systemEnvironmentService.save(sroPriorityConfig);
-        }
     }
 }
