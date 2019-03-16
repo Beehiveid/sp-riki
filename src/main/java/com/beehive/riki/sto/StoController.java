@@ -1,6 +1,7 @@
 package com.beehive.riki.sto;
 
 import com.beehive.riki.common.ControllerFactoryAdapter;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/sto")
+@Api(description = "Operation that handle STO's module", tags = "STO")
 public class StoController extends ControllerFactoryAdapter<Sto,Long> {
     @Autowired
     private StoServiceImpl stoService;

@@ -1,6 +1,7 @@
 package com.beehive.riki.salesPerson;
 
 import com.beehive.riki.common.ControllerFactoryAdapter;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/sales/person")
+@Api(description = "Operation that handle sales person module", tags = "Sales Person")
 public class SalesPersonController extends ControllerFactoryAdapter<SalesPerson,Long> {
     @Autowired
     private SalesPersonServiceImpl salesPersonService;

@@ -1,6 +1,7 @@
 package com.beehive.riki.agency;
 
 import com.beehive.riki.common.ControllerFactoryAdapter;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/agency")
+@Api(description = "Operation that handle agencies module", tags = "Agency")
 public class AgencyController extends ControllerFactoryAdapter<Agency,Long> {
     @Autowired
     private AgencyServiceImpl agencyService;
