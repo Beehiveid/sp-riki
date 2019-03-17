@@ -29,7 +29,6 @@ public class Services extends AuditorBase {
         this.description = description;
     }
 
-    public Services(String name) {
-        this.name = name;
+    public Services() {
     }
 }

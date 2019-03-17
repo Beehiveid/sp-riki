@@ -29,7 +29,6 @@ public class Sto extends AuditorBase {
         this.address = address;
     }
 
-    public Sto(String name) {
-        this.name = name;
+    public Sto() {
     }
 }

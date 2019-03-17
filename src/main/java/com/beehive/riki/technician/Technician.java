@@ -18,7 +18,6 @@ public class Technician extends AuditorBase {
         this.name = name;
     }
 
-    public Technician(String name) {
-        this.name = name;
+    public Technician() {
     }
 }
