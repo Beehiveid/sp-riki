@@ -29,7 +29,6 @@ public class Agency extends AuditorBase {
         this.address = address;
     }
 
-    public Agency(String name) {
-        this.name = name;
+    public Agency() {
     }
 }

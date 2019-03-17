@@ -55,7 +55,6 @@ public class SalesPerson extends AuditorBase {
         this.address = address;
     }
 
-    public SalesPerson(String name) {
-        this.name = name;
+    public SalesPerson() {
     }
 }
