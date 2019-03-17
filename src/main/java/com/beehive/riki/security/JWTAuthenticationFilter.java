@@ -81,9 +81,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             ciString = new ObjectMapper().writeValueAsString(clientInformation);
         }
 
-        String uiConfig = clientService.defineUIConfig();
-        String spt = clientService.defineSROPriorityType();
-
         String token = JWT.create()
                 .withSubject(((User)auth.getPrincipal()).getUsername())
                 .withClaim("uid", appUser.getId())
@@ -92,8 +89,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .withClaim("cid", clientId.toString())
                 .withClaim("sky", secretKey.toString())
                 .withClaim("scope", appUser.getRole().getName().toUpperCase().replace(" ","_"))
-                .withClaim("uic", uiConfig)
-                .withClaim("spt", spt)
                 .sign(Algorithm.HMAC512(SecurityConstant.SECRET.getBytes()));
 
         String xClient = req.getHeader("x-client-data");
